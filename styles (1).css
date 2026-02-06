@@ -78,11 +78,28 @@ textarea:focus-visible {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   text-decoration: none;
   font-weight: 800;
   font-size: 1.04rem;
   letter-spacing: 0.01em;
   color: var(--secondary);
+  padding: 0.35rem 0.55rem;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.brand-logo {
+  width: 44px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.brand-text {
+  line-height: 1.2;
 }
 
 .nav-links {
@@ -339,8 +356,18 @@ textarea:focus {
   .nav-wrap {
     min-height: auto;
     padding: 0.85rem 0;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    padding: 0.25rem 0.4rem;
+    flex: 1;
+  }
+
+  .brand-logo {
+    width: 38px;
   }
 
   .menu-toggle {
