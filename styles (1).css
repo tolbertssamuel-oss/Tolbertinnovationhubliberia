@@ -1,13 +1,14 @@
 :root {
-  --primary: #0e6b43;
-  --primary-dark: #09462c;
-  --secondary: #0c2f75;
-  --accent: #f5b335;
-  --bg: #f4f7fb;
+  --primary: #0c2f75;
+  --primary-dark: #081f4f;
+  --secondary: #123b8e;
+  --accent: #c1121f;
+  --accent-soft: #f6d9dd;
+  --bg: #eef3fb;
   --surface: #ffffff;
   --text: #1b2430;
   --muted: #556274;
-  --line: #d7e0ea;
+  --line: #d2dceb;
   --radius: 14px;
   --shadow-soft: 0 8px 24px rgba(8, 24, 42, 0.06);
   --focus: #ffbf47;
@@ -20,7 +21,7 @@ body {
   font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
   color: var(--text);
   line-height: 1.7;
-  background: var(--bg);
+  background: linear-gradient(180deg, #e6eefb 0%, #eef3fb 38%, #f7f9fd 100%);
   font-size: 1rem;
 }
 
@@ -65,7 +66,7 @@ textarea:focus-visible {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.97);
+  background: #f7faff;
   backdrop-filter: blur(8px);
 }
 
@@ -118,8 +119,8 @@ textarea:focus-visible {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-dark);
-  border-bottom-color: var(--primary);
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 
@@ -137,14 +138,14 @@ textarea:focus-visible {
 }
 
 .hero {
-  background: linear-gradient(120deg, #0f6f45, #0c2f75);
+  background: linear-gradient(135deg, #0c2f75 0%, #123b8e 70%, #8f1020 100%);
   color: #fff;
   padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(2.8rem, 5vw, 4.5rem);
 }
 
 .eyebrow {
   margin: 0;
-  color: #d9f8ea;
+  color: #d8e7ff;
   text-transform: uppercase;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
@@ -197,7 +198,7 @@ h3 {
 
 .btn-primary {
   background: var(--accent);
-  color: #2a2207;
+  color: #ffffff;
 }
 
 .btn-outline {
@@ -211,12 +212,12 @@ h3 {
 }
 
 .section-alt {
-  background: #eef3fb;
+  background: #e9f0fc;
 }
 
 .section-label {
   margin: 0;
-  color: var(--primary);
+  color: var(--secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.8rem;
