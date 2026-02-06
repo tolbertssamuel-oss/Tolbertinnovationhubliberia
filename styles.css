@@ -110,10 +110,10 @@ textarea:focus-visible {
   display: none;
   min-height: 44px;
   padding: 0.6rem 0.95rem;
-  border: 1px solid #bfd0e4;
+  border: 1px solid #9ab0d6;
   border-radius: 10px;
-  background: #ffffff;
-  color: var(--secondary);
+  background: linear-gradient(90deg, #0c2f75, #c1121f);
+  color: #ffffff;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
@@ -347,6 +347,7 @@ textarea:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
   }
 
   .nav-links {
@@ -482,4 +483,10 @@ small {
 .letter-item {
   border-color: #cfe2ff;
   background: #f4f9ff;
+}
+
+.copyright-note {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #cde8ff;
 }
