@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="styles.css" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script>
+    window.__requireAuth = true;
+    window.__requireAuthRedirect = true;
+  </script>
+  <script src="auth.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -29,6 +34,19 @@
   </header>
 
   <main id="main-content">
+    <section class="section protected-gate" hidden>
+      <div class="container">
+        <p class="section-label">Protected Content</p>
+        <h1 class="page-title">IELTS / TOEFL Tutorial</h1>
+        <p class="section-intro">Please login to access IELTS/TOEFL tutorials.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="login.html">Login</a>
+          <a class="btn btn-outline" href="register.html">Register</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="protected-content" hidden>
     <section class="hero">
       <div class="container">
         <p class="eyebrow">Language Preparation</p>
@@ -121,6 +139,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="site-footer">

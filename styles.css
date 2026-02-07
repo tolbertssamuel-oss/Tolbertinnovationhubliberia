@@ -137,6 +137,21 @@ textarea:focus-visible {
   cursor: pointer;
 }
 
+.logout-button {
+  border: 1px solid #9ab0d6;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0c2f75;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .hero {
   background: linear-gradient(135deg, #0c2f75 0%, #123b8e 70%, #8f1020 100%);
   color: #fff;
