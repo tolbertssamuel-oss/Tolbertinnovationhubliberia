@@ -173,8 +173,8 @@ if (registerForm) {
     });
 
     setUsers(users);
-    setSession({ email, role: 'Student', status: 'Active' });
-    window.location.href = formData.get('redirect') || 'ielts-toefl.html';
+    const redirectTarget = formData.get('redirect') || 'ielts-toefl.html';
+    window.location.href = `login.html?redirect=${encodeURIComponent(redirectTarget)}&new=1`;
   });
 }
 
