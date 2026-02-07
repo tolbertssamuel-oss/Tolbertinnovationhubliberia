@@ -131,10 +131,23 @@ if (registerForm) {
     const name = formData.get('fullName').trim();
     const email = formData.get('email').trim().toLowerCase();
     const password = formData.get('password');
+    const confirmPassword = formData.get('confirmPassword');
     const phone = formData.get('phone').trim();
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !confirmPassword) {
       feedback.textContent = 'Please complete all required fields.';
+      feedback.style.color = '#b42318';
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      feedback.textContent = 'Passwords do not match. Please re-enter them.';
+      feedback.style.color = '#b42318';
+      return;
+    }
+
+    if (password.length < 8) {
+      feedback.textContent = 'Password must be at least 8 characters long.';
       feedback.style.color = '#b42318';
       return;
     }

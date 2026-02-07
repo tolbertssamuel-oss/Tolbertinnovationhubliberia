@@ -35,29 +35,34 @@
       <div class="container form-wrap">
         <p class="section-label">Student Sign Up</p>
         <h1 class="page-title">Create Your Account</h1>
-        <p class="section-intro">Please login to access IELTS/TOEFL tutorials once your account is created.</p>
+        <p class="section-intro">Create a student account in under a minute. You'll get instant access to the IELTS/TOEFL tutorials after signup.</p>
 
         <form class="form-card" data-auth="register">
           <div class="form-grid">
             <label>
               Full Name
-              <input type="text" name="fullName" autocomplete="name" required />
+              <input type="text" name="fullName" autocomplete="name" placeholder="e.g., Mary Johnson" required />
             </label>
             <label>
               Email Address
-              <input type="email" name="email" autocomplete="email" required />
+              <input type="email" name="email" autocomplete="email" placeholder="you@email.com" required />
             </label>
             <label>
               Password
-              <input type="password" name="password" autocomplete="new-password" required />
+              <input type="password" name="password" autocomplete="new-password" minlength="8" placeholder="Create a password (min 8 chars)" required />
+            </label>
+            <label>
+              Confirm Password
+              <input type="password" name="confirmPassword" autocomplete="new-password" minlength="8" placeholder="Re-enter your password" required />
             </label>
             <label>
               Phone (optional)
-              <input type="tel" name="phone" autocomplete="tel" />
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+231 880 559 227" />
             </label>
           </div>
           <input type="hidden" name="redirect" value="ielts-toefl.html" />
           <button class="btn btn-primary" type="submit">Create Account</button>
+          <p class="form-note">By creating an account you agree to follow our learning community guidelines.</p>
           <p class="form-feedback" aria-live="polite"></p>
         </form>
 
