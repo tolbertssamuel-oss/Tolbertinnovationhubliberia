@@ -21,3 +21,13 @@ document.querySelectorAll('form.form-card').forEach((form) => {
     form.reset();
   });
 });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
