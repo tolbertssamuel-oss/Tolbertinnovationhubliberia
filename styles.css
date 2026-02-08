@@ -1,8 +1,8 @@
 :root {
-  --primary: #0e6b43;
-  --primary-dark: #09462c;
-  --secondary: #0c2f75;
-  --accent: #f5b335;
+  --primary: #1d4ed8;
+  --primary-dark: #1e3a8a;
+  --secondary: #b91c1c;
+  --accent: #ef4444;
   --bg: #f4f7fb;
   --surface: #ffffff;
   --text: #1b2430;
@@ -106,7 +106,7 @@ textarea:focus-visible {
 }
 
 .hero {
-  background: linear-gradient(120deg, #0f6f45, #0c2f75);
+  background: linear-gradient(120deg, #1d4ed8, #b91c1c);
   color: #fff;
   padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(2.8rem, 5vw, 4.5rem);
 }
