@@ -1,4 +1,4 @@
-const MENU_BREAKPOINT = 920;
+const MENU_BREAKPOINT = 768;
 
 const ensureMobileMenuToggle = () => {
   const header = document.querySelector('.site-header');
@@ -22,11 +22,11 @@ const ensureMobileMenuToggle = () => {
 
   const updateState = (open) => {
     button.setAttribute('aria-expanded', open ? 'true' : 'false');
-    nav.classList.toggle('is-open', open);
+    nav.classList.toggle('open', open);
   };
 
   button.addEventListener('click', () => {
-    const isOpen = nav.classList.contains('is-open');
+    const isOpen = nav.classList.contains('open');
     updateState(!isOpen);
   });
 
