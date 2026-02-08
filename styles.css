@@ -15,13 +15,17 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  background-color: #eef3fb;
+}
 body {
   margin: 0;
   font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
   color: var(--text);
   line-height: 1.7;
   background: linear-gradient(180deg, #e6eefb 0%, #eef3fb 38%, #f7f9fd 100%);
+  background-color: #eef3fb;
   font-size: 1rem;
 }
 
@@ -373,6 +377,15 @@ textarea:focus {
 .site-footer a:hover { text-decoration: underline; }
 
 @media (max-width: 920px) {
+  html {
+    background-color: #eef3fb;
+  }
+
+  body {
+    background: linear-gradient(180deg, #e6eefb 0%, #eef3fb 45%, #f7f9fd 100%);
+    background-color: #eef3fb;
+  }
+
   .nav-wrap {
     min-height: auto;
     padding: 0.85rem 0;
