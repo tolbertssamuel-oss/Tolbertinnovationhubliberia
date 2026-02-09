@@ -123,6 +123,7 @@ textarea:focus-visible {
   cursor: pointer;
   box-shadow: 0 10px 24px rgba(29, 78, 216, 0.25);
   z-index: 1200;
+  position: relative;
 }
 
 .menu-toggle span {
@@ -377,7 +378,7 @@ textarea:focus {
   }
 
   .nav-links.open {
-    display: flex;
+    display: flex !important;
   }
 
   .menu-toggle {
