@@ -5,16 +5,24 @@ const ensureMobileMenuToggle = () => {
   const nav = header?.querySelector('.nav-links');
   const navWrap = header?.querySelector('.nav-wrap');
 
-  if (!header || !nav || !navWrap || header.querySelector('.menu-toggle')) {
+  if (!header || !nav || !navWrap) {
     return;
   }
 
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'menu-toggle';
-  button.setAttribute('aria-expanded', 'false');
-  button.setAttribute('aria-controls', 'primary-navigation');
-  button.innerHTML = '<span aria-hidden="true">☰</span> Menu';
+  let button = header.querySelector('.menu-toggle');
+  if (!button) {
+    button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'menu-toggle';
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', 'primary-navigation');
+    button.innerHTML = '<span aria-hidden="true">☰</span> Menu';
+    navWrap.appendChild(button);
+  }
+
+  if (button.dataset.menuBound === 'true') {
+    return;
+  }
 
   if (!nav.id) {
     nav.id = 'primary-navigation';
@@ -38,7 +46,7 @@ const ensureMobileMenuToggle = () => {
   window.addEventListener('resize', handleResize);
   updateState(false);
 
-  navWrap.appendChild(button);
+  button.dataset.menuBound = 'true';
 };
 
 const bindFormHandlers = () => {
