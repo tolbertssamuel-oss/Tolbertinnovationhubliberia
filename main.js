@@ -31,6 +31,11 @@ const ensureMobileMenuToggle = () => {
   const updateState = (open) => {
     button.setAttribute('aria-expanded', open ? 'true' : 'false');
     nav.classList.toggle('open', open);
+    if (window.innerWidth <= MENU_BREAKPOINT) {
+      nav.style.display = open ? 'flex' : 'none';
+    } else {
+      nav.style.display = '';
+    }
   };
 
   button.addEventListener('click', () => {
@@ -41,6 +46,10 @@ const ensureMobileMenuToggle = () => {
   const handleResize = () => {
     if (window.innerWidth > MENU_BREAKPOINT) {
       updateState(false);
+    if (window.innerWidth <= MENU_BREAKPOINT) {
+      const isOpen = nav.classList.contains('open');
+      nav.style.display = isOpen ? 'flex' : 'none';
+    }
   };
 
   window.addEventListener('resize', handleResize);
