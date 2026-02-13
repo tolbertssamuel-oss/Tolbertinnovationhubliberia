@@ -107,6 +107,26 @@ textarea:focus-visible {
   gap: 1rem;
 }
 
+
+.nav-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary-dark);
+  border: 1px solid var(--line);
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  min-height: 40px;
+}
+
+.nav-home:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 .menu-toggle {
   display: none;
   align-items: center;
@@ -375,6 +395,11 @@ textarea:focus {
     display: none;
     flex-direction: column;
     padding-top: 0.6rem;
+  }
+
+  .nav-home {
+    align-self: flex-start;
+    min-height: 44px;
   }
 
   .nav-links.open {
