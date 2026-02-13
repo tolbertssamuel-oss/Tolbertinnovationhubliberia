@@ -59,7 +59,7 @@ const ensureMobileMenuToggle = () => {
 };
 
 const bindFormHandlers = () => {
-  document.querySelectorAll('form.form-card').forEach((form) => {
+  document.querySelectorAll('form.form-card:not(#mini-quiz-form)').forEach((form) => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
@@ -85,6 +85,86 @@ const bindFormHandlers = () => {
 document.addEventListener('DOMContentLoaded', () => {
   ensureMobileMenuToggle();
   bindFormHandlers();
+  initMiniQuiz();
+
+
+function initMiniQuiz() {
+  const form = document.getElementById('mini-quiz-form');
+  if (!form) {
+    return;
+  }
+
+  const feedback = document.getElementById('quiz-feedback');
+  const tryAgainBtn = document.getElementById('try-again-btn');
+  const nextModuleBtn = document.getElementById('next-module-btn');
+  const passThreshold = Number(form.dataset.passThreshold || 70);
+  const answers = {
+    q1: 'reading',
+    q2: 'speaking',
+    q3: 'listening',
+  };
+
+  const setPassedState = (passed) => {
+    if (passed) {
+      nextModuleBtn.disabled = false;
+      nextModuleBtn.setAttribute('aria-disabled', 'false');
+      nextModuleBtn.classList.remove('is-disabled');
+    } else {
+      nextModuleBtn.disabled = true;
+      nextModuleBtn.setAttribute('aria-disabled', 'true');
+      nextModuleBtn.classList.add('is-disabled');
+    }
+  };
+
+  const savedPassed = localStorage.getItem('quiz_passed') === 'true';
+  if (savedPassed) {
+    feedback.textContent = 'Passed ✅ You can continue to the next module.';
+    feedback.style.color = '#0b5a32';
+    setPassedState(true);
+  } else {
+    setPassedState(false);
+  }
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const total = Object.keys(answers).length;
+    let correct = 0;
+
+    Object.entries(answers).forEach(([name, value]) => {
+      const selected = form.querySelector(`input[name="${name}"]:checked`);
+      if (selected && selected.value === value) {
+        correct += 1;
+      }
+    });
+
+    const percent = Math.round((correct / total) * 100);
+
+    if (percent >= passThreshold) {
+      localStorage.setItem('quiz_passed', 'true');
+      feedback.textContent = `Passed ✅ Score: ${correct}/${total} (${percent}%).`;
+      feedback.style.color = '#0b5a32';
+      tryAgainBtn.hidden = true;
+      setPassedState(true);
+      return;
+    }
+
+    localStorage.removeItem('quiz_passed');
+    setPassedState(false);
+    tryAgainBtn.hidden = false;
+    feedback.textContent = `Score too low—try again to continue. Score: ${correct}/${total} (${percent}%).`;
+    feedback.style.color = '#b42318';
+  });
+
+  tryAgainBtn.addEventListener('click', () => {
+    form.reset();
+    feedback.textContent = '';
+    localStorage.removeItem('quiz_passed');
+    tryAgainBtn.hidden = true;
+    setPassedState(false);
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 
     if (!navLinks.id) {
       navLinks.id = 'mobile-menu-options';

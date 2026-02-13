@@ -111,6 +111,43 @@
         </div>
       </div>
     </section>
+
+    <section class="section" id="mini-quiz">
+      <div class="container">
+        <p class="section-label">Mini Quiz</p>
+        <h2>Check Your Understanding</h2>
+        <p class="section-intro">Score at least 70% to unlock the next module.</p>
+        <form id="mini-quiz-form" class="form-card" data-pass-threshold="70">
+          <fieldset class="quiz-fieldset">
+            <legend>1) Which module focuses on skimming and scanning techniques?</legend>
+            <label><input type="radio" name="q1" value="listening" /> Listening</label>
+            <label><input type="radio" name="q1" value="reading" /> Reading</label>
+            <label><input type="radio" name="q1" value="speaking" /> Speaking</label>
+          </fieldset>
+
+          <fieldset class="quiz-fieldset">
+            <legend>2) Which module helps with interview-style fluency practice?</legend>
+            <label><input type="radio" name="q2" value="writing" /> Writing</label>
+            <label><input type="radio" name="q2" value="speaking" /> Speaking</label>
+            <label><input type="radio" name="q2" value="reading" /> Reading</label>
+          </fieldset>
+
+          <fieldset class="quiz-fieldset">
+            <legend>3) Which module improves note-taking speed from audio content?</legend>
+            <label><input type="radio" name="q3" value="reading" /> Reading</label>
+            <label><input type="radio" name="q3" value="listening" /> Listening</label>
+            <label><input type="radio" name="q3" value="writing" /> Writing</label>
+          </fieldset>
+
+          <div class="quiz-actions">
+            <button class="btn btn-primary" id="check-quiz-btn" type="submit">Check Quiz</button>
+            <button class="btn btn-outline" id="try-again-btn" type="button" hidden>Try Again</button>
+            <button class="btn btn-outline" id="next-module-btn" type="button" disabled aria-disabled="true">Next Module</button>
+          </div>
+          <p id="quiz-feedback" class="form-feedback" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
