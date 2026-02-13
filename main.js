@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-enabled');
+
 const mobileMenuQuery = window.matchMedia('(max-width: 920px)');
 
 const setupMobileMenu = () => {

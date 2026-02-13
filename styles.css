@@ -412,7 +412,7 @@ textarea:focus {
     margin-left: auto;
   }
 
-  .nav-links {
+  .js-enabled .nav-links {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -425,7 +425,7 @@ textarea:focus {
     transition: max-height 0.32s ease, opacity 0.25s ease, transform 0.25s ease;
   }
 
-  .nav-links.menu-open {
+  .js-enabled .nav-links.menu-open {
     max-height: 420px;
     opacity: 1;
     transform: translateY(0);
